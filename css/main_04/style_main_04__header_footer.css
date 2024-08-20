@@ -1,0 +1,97 @@
+@charset "UTF-8";
+/* ●header● */
+.main04_header {
+  transition: 0.7s !important;
+}
+.main04_header .slide_icon {
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.main04_header .sub-menu {
+  left: 0.625rem !important;
+}
+.main04_header .sub-menu .elementor-sub-item {
+  border: none;
+}
+
+.main04_header_mb .hamburger_btn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+}
+.main04_header_mb .hamburger_btn .bar {
+  width: 2rem;
+  height: 2px;
+  background-color: #000;
+  transition: 0.3s;
+}
+
+body.page.nav_slide_on {
+  transition: 0.3s;
+  margin-left: 0;
+}
+body.page.nav_slide_on .main04_header {
+  transform: translateX(-100%);
+}
+body.page.nav_slide_on .main04_header .slide_icon > .elementor-widget-container {
+  background-color: var(--e-global-color-e11080b);
+}
+body.page.nav_slide_on .main04_header .slide_icon > .elementor-widget-container .elementor-icon-wrapper {
+  transform: rotate(180deg);
+}
+body.page.nav_slide_on .main04_header_mb {
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+body.page.nav_slide_on .main04_header_mb .hamburger_btn .bar {
+  background-color: #fff;
+}
+body.page.nav_slide_on .main04_header_mb .hamburger_btn .bar:first-child {
+  transform: rotate(45deg) translate(7px, 7px);
+}
+body.page.nav_slide_on .main04_header_mb .hamburger_btn .bar:nth-child(2) {
+  opacity: 0;
+}
+body.page.nav_slide_on .main04_header_mb .hamburger_btn .bar:last-child {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+.main04_footer .title {
+  color: var(--e-global-color-997d2d6);
+}
+.main04_footer .divider {
+  display: inline-block;
+  width: 1px;
+  height: 10px;
+  background-color: var(--e-global-color-8316909);
+  margin: 0 0.5rem;
+}
+
+@media (min-width: 1024px) {
+  body.page {
+    margin-left: 16rem;
+    transition: 0.3s;
+  }
+}
+@media (max-width: 1023px) {
+  .main04_header {
+    transform: translateX(-100%);
+  }
+  .overlay {
+    opacity: 0;
+    display: none !important;
+  }
+  body.page.nav_slide_on {
+    margin: 0;
+  }
+  body.page.nav_slide_on .main04_header {
+    transform: translateX(0);
+  }
+  body.page.nav_slide_on .overlay {
+    opacity: 1;
+    display: block !important;
+  }
+}/*# sourceMappingURL=style_main_04__header_footer.css.map */

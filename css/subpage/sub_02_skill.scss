@@ -1,0 +1,104 @@
+@import '../_mixin', '../_variables';
+
+//비접촉
+.page-id-10575{
+  .elementor-counter-number-suffix{@include h3;}
+}
+//집단행동분석
+.sub02-2_sec_02 {
+  .elementor-counter-number{
+    background: linear-gradient(90deg, $main_color_01-1 45%, $main_color_01 100%);-webkit-text-fill-color: transparent; background-clip: text;
+  }
+  .elementor-counter-number-suffix{@include h4;}
+}
+.sub02-2_sec_04{
+  .left .Classification_table{margin: 0;
+    caption{margin-bottom: 0.625rem; color: $main_color_02; text-align: left; @include h5;}
+    tr{@include h5;
+      th,td{
+        &:first-child{text-align: center;}
+      }
+      .en{font-size: .8em; color: $grey_02;}
+    }
+    thead tr{background-color: $main_color_02;
+      th{border: none; color: white; text-align: left; padding: 0.625rem; font-weight: 500; vertical-align: middle;
+        &:first-child{border-radius: $radius 0 0 $radius;}
+        &:last-child{border-radius: 0 $radius $radius 0;}
+      }
+    }
+    tbody{
+      tr{
+        td{background-color: transparent; padding: 1rem 0.625rem ; @include border_tnb($top:0,$color:$grey_03);}
+      }
+    }
+  }
+  &.jp{
+    thead{word-break: keep-all;}
+  }
+}
+//집단행동분석 end
+//무제한학습데이터
+.sub02-3_sec_02{
+  .left .wp-caption{display: flex; flex-direction: column-reverse;
+    &-text{margin-bottom: 0.625rem;}
+  }
+}
+//무제한학습데이터 end
+//사물지능화
+.sub02-4_sec_01 .hotspot_text > div{cursor: pointer;
+  &.on{ box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.08); transition: .3s; opacity: 1; height: 12rem; background-color: $main_color_02!important;
+    .text_wrapper .elementor{
+      &-heading-title, &-icon-list-text, &-icon-list-icon i{color: #fff;}
+    }
+    .elementor-widget{
+      &-icon-list,&-image{opacity: 1; height: auto; position: relative;}
+      &-image{position: absolute; top: 50%; transform: translateY(-50%);}
+    }
+  }
+  .elementor-widget{
+    &-icon-list,&-image{opacity: 0; height: 0; position: absolute;}
+  }
+  .elementor-icon-list-items{@include grid(repeat(3, 1fr)); gap: 0.625rem 0;}
+}
+.hotspot_text{
+  &_en{
+    .elementor-icon-list-items{grid-template-columns:repeat(2, 1fr) !important; gap: 0.2rem 0 !important;}
+    &>div{
+      &.on{height: 14rem !important;}
+      &:last-child .elementor-icon-list-item:last-child{grid-column: 3/1;}
+    }
+  }
+  &_jp{
+    & > div:first-child .elementor-icon-list-items{grid-template-columns:repeat(1, 1fr)}
+  }
+}
+//사물지능화 end
+@include max-tb{
+  .sub02-4_sec_01 .hotspot_text > div{
+    &.on{grid-row: 2 / 1;}
+  }
+}
+@include mb{
+  //집단행동분석
+  .sub02-2_sec_04{
+    .left .elementor-widget-html{overflow-x: scroll;
+      &::-webkit-scrollbar {height: 5px;}
+      &::-webkit-scrollbar-track {background: $grey_05; border: none;}
+      &::-webkit-scrollbar-thumb {background: $grey_02; border-radius: 10px;}
+    }
+    .Classification_table{min-width: 420px;}
+  }
+  //집단행동분석
+  //사물지능화
+  .hotspot{
+    .e-hotspot:nth-child(3) .e-hotspot--tooltip-position{right: -1rem !important;}
+  }
+  .sub02-4_sec_01 .hotspot_text > div{
+    &.on{height: auto !important;
+      .elementor-widget{
+        &-image{position: relative; top:auto; transform: none;}
+      }
+    }
+  }
+  //사물지능화 end
+}

@@ -1,0 +1,238 @@
+@import '_mixin', '_variables';
+
+*{scroll-behavior: smooth; outline:none;}
+html:lang(ko-KR), html:lang(en-US), .lang_jp_en, .kboard-title{word-break: keep-all;}
+html:lang(jp){word-break: break-all; overflow-wrap: break-word;}
+
+img{image-rendering: -webkit-optimize-contrast;}
+::selection{background: $main_color_01; color: #fff;}
+::-webkit-scrollbar {width: 8px;}
+::-webkit-scrollbar-track {background: white;}
+::-webkit-scrollbar-thumb {background: $grey_02; border-radius: 10px;}
+h1, h2, h3, h4, h5, h6, p{margin: 0;}
+.elementor-button .elementor-align-icon-right{display:flex;}
+.elementor-icon-wrapper{display:flex; align-items:center;}
+.elementor-item:focus{background:none !important;}
+body{background: linear-gradient(180deg, #fff 5rem, $grey_05 20rem);}
+// list style
+ul, ol{padding:0;
+	li{list-style:none; padding:0;}
+	&.hyphen_list li{@include list($list-type:'\2d');}
+}
+// list style end
+/* -lottie- */
+.elementor-widget-lottie .e-lottie__caption{display:none;}
+/* -lottie end- */
+/* -color class- */
+.filter_white{filter:brightness(0) invert(1);}
+.filter_black{filter: grayscale(100%) brightness(0);}
+.filter_logo_01{filter:invert(40%) sepia(99%) saturate(913%) hue-rotate(323deg) brightness(97%) contrast(88%);}
+.filter_logo_02{filter:invert(10%) sepia(14%) saturate(3664%) hue-rotate(194deg) brightness(94%) contrast(98%);}
+.font_logo_color_01{color:$main_color_01;}
+
+.icon_white .cls-1{fill:#fff!important;}
+.icon_black .cls-1{fill:$black!important;}
+
+h5,p{line-height: 1.5em!important;}
+
+.opa_07{opacity: 0.7;}
+.opa_05{opacity: 0.5;}
+.opa_03{opacity: 0.3;}
+/* -color class end- */
+/* -br- */
+@include pc{.br_pc__none{display:none;}}
+@include tb{.br_tb__none{display:none;}}
+@include mb{.br_mb__none{display:none;}}
+/* -br- */
+/* -cursor/floating- */
+.cursor{cursor: pointer;}
+.floating{opacity:0;
+	.elementor-icon{cursor:pointer;}
+}
+/* -cursor/floating btn end- */
+// header
+header > div.full_w{width: 100% !important; left: 0 !important;}
+// header end
+/* -kBoard- */
+// (modal)
+.note-modal.open{@include flex(center, center);}
+// (default thead)
+#kboard-default-list thead{position: absolute; @include size(0, 0); overflow: hidden;}
+// (kboard media 추가)
+.kboard-attr-media .attr-value a{color: $grey_02; font-size: 14px;}
+// (new)
+.kboard-default-new-notify{background:$main_color_01 !important;}
+/* -kBoard end- */
+/* -quform edit form- */
+.quform-edit-form{display:none;}
+/* -nav popup close- */
+.elementor-popup-modal .dialog-close-button {content: url(/wp-content/uploads/2023/12/close_btn__round.svg); @include size(20px, 20px);}
+//divider
+.divider.line_slide {animation: line_slide 2s;}
+@keyframes line_slide {
+    from {width: 0;}
+    to {width: 100%;}
+}
+// slide in img
+.slide_in_img{clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%); transition: 2s !important; user-select:none;
+	&.slide_in{animation: slide_in 3s forwards;}
+	&.main>.elementor-widget-container:after{content: ""; display: inline-block; @include size(40%, 100%); background: linear-gradient(90deg, $grey_05 0%, rgba(255, 255, 255, 0) 100%); position: absolute; left: 0;}
+}
+@keyframes slide_in {
+	100%{clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);}
+}
+//typing
+.typing{color:#0000; background:linear-gradient(-90deg,transparent 0px,#0000 0) 10px 0,linear-gradient($main_color_02 0 0) 0 0; background-size:calc(var(--n)*1ch) 200%; -webkit-background-clip:padding-box,text; background-clip:padding-box,text; background-repeat:no-repeat; opacity: 0;
+  &.black{background:linear-gradient(-90deg,transparent 0px,#0000 0) 10px 0,linear-gradient($black 0 0) 0 0; background-size:calc(var(--n)*1ch) 200%; -webkit-background-clip:padding-box,text; background-clip:padding-box,text; background-repeat:no-repeat;}
+  &.on, &.top{
+    opacity: 1;
+    animation:
+    b 5.5s infinite steps(1),
+    t calc(var(--n)*.06s) steps(var(--n)) forwards;
+  }
+}
+@keyframes t{
+  from {background-size:0 200%;}
+}
+@keyframes b{
+  50% {background-position:0 -100%,0 0}
+}
+// typing end
+// language end
+.language{
+  &_jp, &_jp a, &_jp h1,&_jp h2,&_jp h3,&_jp h4{font-family: "Pretendard JP"!important;}
+}
+// language end
+/* ●sub 공통● */
+#sub_more_btn{width: 100%;}
+.sticky_imgbox{
+  .description{
+    .elementor-image-box{
+      &-content{
+        .elementor-image-box-title, .elementor-image-box-description{transition: .5s;}
+      }
+    }
+		&:not(&:nth-last-child(2)){
+			.elementor-image-box-img:after{content: ""; display: block; @include size(50%, 100%); background-color: $grey_05; position: absolute; right: 0; top: 0; opacity: 0; transition: .5s;}
+		}
+    &.elementor-sticky--effects:not(&:nth-last-child(2)){
+      .elementor-image-box{
+				&-img:after{opacity: 0.95 !important;}
+        &-content{
+          .elementor-image-box-title, .elementor-image-box-description{color: $grey_04; transition: .5s;}
+        }
+      }
+    }
+    .elementor-image-box-content{background-color: $grey_05;}
+		&_box{
+			&:not(&:nth-last-child(2)){
+        &::after{content: ""; display: block; @include size(100%, 100%); background-color: $grey_05; @include center; opacity: 0; transition: .5s;}
+        &.description_box_color:after{background-color: $main_color_02 !important;}
+      }
+			&.elementor-sticky--effects{
+        &:after{opacity: 0.95 !important; transition: .5s !important;}
+        &.description_box_color:after{opacity: 0.85 !important;}
+      }
+		}
+  }
+}
+// hotspot
+.hotspot{
+  .e-hotspot{
+    &:not(.e-hotspot.on){
+      .e-hotspot{
+        &__outer-circle{animation: none; opacity: 0;}
+        &__inner-circle{opacity: 0.5;}
+      }
+    }
+    &:nth-last-child(2) .e-hotspot__tooltip{left: 0 !important;}
+    &__tooltip{opacity: 1; transform: translate(0, 0);}
+  }
+  &_text{
+    .elementor-widget-image-box{cursor: pointer;
+      .elementor-image-box-content{
+        .elementor-image-box{
+          &-content{overflow: hidden;}
+          &-title{opacity: 0.3; margin-bottom: 0;
+            &::after{content: "+"; position: absolute; right: 1rem; font-weight: 400;}
+          }
+          &-description{opacity: 0; height: 0;}
+        }
+      }
+    }
+  }
+}
+/* ●sub 공통 end● */
+.quform{
+  &_en .quform-input-radio .quform-options, &_jp .quform-input-radio .quform-options{padding: 0 0.325rem;
+    .quform-option{padding: 0 0.3rem;
+      &-label{margin-bottom: 0.625rem !important;}
+    }
+  }
+  textarea::placeholder{@include h6;}
+	.quform-label-text, select, input, textarea, label{@include h5;
+		&:focus:not(.privacy_wrapper input:focus){border-color: $main_color_02;}
+	}
+	.quform-spacer{margin:0;
+		.quform-required{font-size:0.88rem; color: $main_color_01;}
+	}
+  .quform-input-radio .quform-options{
+    &:not(.quform_en .quform-input-radio .quform-options,.quform_jp .quform-input-radio .quform-options){display: flex; gap: 0.625rem;
+      .quform-option{width: 100%; padding: 0;
+        &-label{margin: 0 !important;}
+      }
+    }
+    .quform-option{
+      &-label{text-align: center; padding:0.3rem 1rem; color: $grey_01}
+      &-text{@include h6;}
+      input:checked+label{background-color: $main_color_02; color: white!important;}
+    }
+  }
+	.situation{
+		.quform-field-radio:checked+label{background-color: $black; color: #fff;}
+		.quform-option-label{margin: 0; text-align: center;}
+	}
+	input{
+			&[type=checkbox], &[type=checkbox]:checked:after{@include size(1rem, 1rem); min-width: 1rem; border-radius: 50% !important;}
+			&[type=checkbox]{overflow: visible; appearance: none; cursor: pointer;  @include border($color:$grey_02);
+					&:checked:after{content: ""; background-color: $grey_02; display: block; position: relative; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.65);}
+			}
+	}
+	.privacy_wrapper{font-size: 1rem; margin-top: 0.625rem;
+			.quform-input-checkbox{margin: 0;}
+			.quform-option{display: flex; min-height: auto; align-items: center;}
+			a{font-size: 0.88rem; color: $grey_02;
+					&:hover{color:$main_color_01;}
+			}
+	}
+	/* (error & success message) */
+  .quform-error>.quform-error-inner{background: none; border: none; font-size: 1rem; color: $main_color_01; padding: 0;}
+  .quform-required{ color: $main_color_01!important;}
+}
+@include pc{
+  .sticky_imgbox{
+    .description{
+      .elementor-image-box-content{padding: 1.25rem 0;}
+    }
+  }
+}
+@include max-tb{
+  // .img_box .elementor-image-box-wrapper{flex-direction: column!important;}
+}
+@include mb{
+	// mobile table x scroll
+	.table{overflow-x: auto;}
+	// mobile table x scroll end
+	// kboard default list 
+	#kboard-default-list colgroup{display: none;}
+	// kboard default list end 
+	// ●mobile tab●  
+	.e-n-tabs-mobile .e-n-tabs-heading{@include touch_snap; gap: 10px !important;}
+	// ●mobile tab end●
+  .quform{
+    &_en .quform-input-radio .quform-options .quform-option,&_jp .quform-input-radio .quform-options .quform-option{padding: 0;
+      &-label{margin-bottom: 0.3rem !important;}
+    }
+    .quform-input-radio .quform-options{flex-direction: column; padding: 0 0.625rem;}
+  }
+}

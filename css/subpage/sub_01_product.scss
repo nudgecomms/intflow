@@ -1,0 +1,128 @@
+@import '../_mixin', '../_variables';
+// edgefarm
+// ---(hotspot)
+.sub01-1 .hotspot{
+  .e-hotspot:nth-child(2) .e-hotspot__tooltip{right: 0 !important;}
+  &_text{
+    .elementor-widget-image-box{
+      &.on{
+        .elementor-image-box-content{
+          .elementor-image-box{
+            &-title, &-description{opacity: 1; transition: .3s; color:#fff;}
+            &-title{
+              &:after{content: "-";}
+            }
+            &-description{height: 100%; animation: description_on .3s forwards;}
+          }
+        }
+      }
+    }
+  }
+  &_pc .hotspot_text{
+    .elementor-widget-image-box{
+      .elementor-image-box-content{
+        .elementor-image-box{
+          &-title{@include border_tnb($top:0, $color:white); padding: 0 2rem 1.25rem;}
+          &-description{padding: 0;}
+        }
+      }
+      &.on .elementor-image-box-content{
+        .elementor-image-box{
+          &-title, &-description{padding: 0 2rem 1.25rem; border: none;}
+          &-description{background-color: white;padding: 2rem 2rem clamp(3rem, 4rem, 4rem); color: $black; position: relative;
+            &::before{@include size(100%,100%);content: '';position: absolute;top: 0px;left: 0px; background-position: center center!important; background-repeat: no-repeat!important; background-size: cover!important; opacity: 0.25; z-index: -1;}
+          }
+        }
+      }
+      &:nth-child(1) .elementor-image-box-content .elementor-image-box-description::before{background: url('/wp-content/uploads/2024/08/sub01-1_main_bg-1.jpg');}
+      &:nth-child(2) .elementor-image-box-content .elementor-image-box-description::before{background: url('/wp-content/uploads/2024/08/sub01-1_main_bg-2.jpg');}
+      &:nth-child(3) .elementor-image-box-content .elementor-image-box-description::before{background: url('/wp-content/uploads/2024/08/sub01-1_main_bg-3.jpg');}
+      &:nth-child(4) .elementor-image-box-content .elementor-image-box-description::before{background: url('/wp-content/uploads/2024/08/sub01-1_main_bg-4.jpg');}
+      &:nth-child(5) .elementor-image-box-content .elementor-image-box-description::before{background: url('/wp-content/uploads/2024/08/sub01-1_main_bg-5.jpg');}
+    }
+  }
+  &_mb{
+    .hotspot_img{
+      &>div{position: absolute; opacity: 0;
+        &.on{position: relative; opacity: 1;}
+      }
+    }
+    .hotspot_text{
+      .elementor-widget-image-box{
+        .elementor-image-box-content{padding: 0 1.25rem;
+          .elementor-image-box-title{opacity: 0.3;}
+        }
+        &.on{background-color: $grey_04; border-radius: $radius;
+          .elementor-image-box-content{padding: 1.25rem;
+            .elementor-image-box{
+              &-title, &-description{color: $black;}
+              &-title{opacity: 1; margin-bottom: 0.625rem;}
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@keyframes description_on {
+  0%{clip-path: polygon(0% 0%, 0% 0%, 100% 0%, 100% 0%);}
+  100%{clip-path: polygon(0% 100%, 0% 0%, 100% 0%, 100% 100%);}
+}
+// ---(hotspot end)
+// ---(sec_03)
+.sub01-1_sec_03{
+  .warpper{
+    &::after{content: ''; @include center($top:35%); width: 80%; height: 1px; background-color: $grey_03;}
+  }
+  .e-lottie__container{overflow: hidden;}
+  .lottie_scale{
+    .e-lottie__animation{transform: scale(1.2);}
+    &_8 .e-lottie__animation{transform: scale(0.8);}
+  }
+}
+// ---(sec_03 end)
+// edgefarm end
+// edgesafe
+// ---(sec_03)
+.sub01-2_sec_03{
+  .elementor-image-box-wrapper .elementor-image-box{
+    &-img img{border-radius: $radius $radius 0 0;}
+    &-content{padding: 0 1.25rem 1.25rem;}
+  }
+}
+// ---(sec_03 end)
+// edgesafe end
+@include pc{
+  // edgefarm
+  // ---(hotspot)
+  .sub01-1 .hotspot .hotspot_text{position: absolute !important;}
+  // ---(hotspot end)
+  // edgefarm end
+}
+@include max-tb{
+  // edgefarm
+  // ---(hotspot)
+  .sub01-1 .hotspot{
+    .elementor-widget-image-box.on{order: 1;}
+    .elementor-widget-image-box{order: 2;}
+    .e-hotspot:nth-child(2) .e-hotspot__tooltip{right: 0 !important;}
+  }
+  // ---(hotspot end)
+  // ---(sec_03)
+  .sub01-1_sec_03{
+    .warpper{
+      &::after{display: none;}
+    }
+  }
+  // ---(sec_03 end)
+  // edgefarm end
+}
+@include mb{
+  // edgefarm
+  // ---(sec_03)
+  .sub01-1_sec_03{
+    .elementor-icon-box-content{display: flex; flex-direction: column; justify-content: center;}
+  }
+  // ---(sec_03 end)
+  // edgefarm end
+}

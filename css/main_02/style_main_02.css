@@ -1,0 +1,50 @@
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--e-global-color-997d2d6);
+  border-radius: 10px;
+}
+
+@media (min-width: 1024px) {
+  .main02_section_03_hover .skill_wrapper .title {
+    opacity: 1;
+    transition: 0.3s;
+  }
+  .main02_section_03_hover .skill_wrapper .description {
+    animation: skill_off 0.3s forwards;
+  }
+  .main02_section_03_hover .skill_wrapper:hover .title:not(.description .title) {
+    position: absolute;
+    opacity: 0;
+  }
+  .main02_section_03_hover .skill_wrapper:hover .description {
+    animation: skill_on 0.5s forwards;
+  }
+}
+@keyframes skill_off {
+  0% {
+    transform: translateY(0%);
+    opacity: 1;
+    display: flex;
+  }
+  100% {
+    transform: translateY(50%);
+    opacity: 0;
+    display: none;
+  }
+}
+@keyframes skill_on {
+  0% {
+    transform: translateY(50%);
+  }
+  100% {
+    transform: translateY(0%);
+    display: flex;
+  }
+}/*# sourceMappingURL=style_main_02.css.map */

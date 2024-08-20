@@ -1,0 +1,211 @@
+@import '../_mixin', '../_variables';
+
+//공통
+// (button)
+.kboard-control a.kboard-default-button-small , .elementor-shortcode .kboard-control .kboard-ocean-gallery-button-small{color: $grey_01!important; background: $grey_04 !important; font-size: 0.88rem!important;}
+// (button end)
+// (list)
+.kboard-search{display: none!important;}
+.kboard-pagination{padding: 3.5rem 0.625rem 1.25rem !important;
+  .kboard-pagination-pages{padding: 0 !important; float: none; @include flex; gap: 0.625rem;
+    li{
+      a{padding: 0 !important; border: none !important; width: 30px; height: 30px !important; line-height: 30px !important; font-size: 1rem !important; background-color: transparent !important; color: $main_color_02!important; font-weight: 400 !important; display: inline-block;}
+      &.active a{color: #fff !important; border-radius: 50%; background-color: $main_color_02!important;}
+    }
+  }
+}
+// (list end)
+// (document)
+#kboard-document{
+  .kboard-document-navi,.kboard-document-action{display: none!important;}
+  .kboard-document-wrap{
+    .kboard-title h1,.kboard-title p{font-size: 1.5625rem; color: $main_color_02; line-height: 1.3em;}
+    .kboard-detail{background: none; border-top: none; border-color: $main_color_02; border-width: 2px;
+      .detail{
+        &-writer, &-date .detail-name ,&-view{display:none!important;}
+        &-date .detail-value{padding: 0!important;}
+      }
+      .detail-name{color: $main_color_02; font-size: 1rem;}
+      .detail-value{color: $grey_01; font-size: 1rem;}
+    }
+  }
+  .kboard-content{border-bottom: 1px solid $grey_04;}
+}
+// (default end)
+// (editor)
+#kboard-default-editor, #kboard-ocean-gallery-editor{
+  input[type=text]{width: 100%!important;}
+  
+  input[type=text], select{border: none!important; border-bottom: 1px solid $grey_04!important;}
+  .kboard-attr-row{border:none!important; display: flex;
+    &.kboard-attr-content .attr-name{display: none;}
+    .attr-name{width: 12%!important; padding: 0 0.625rem!important; font-size: 0.88rem!important;}
+    .attr-value{width: 87%;  margin-left: 0!important;}
+  }
+  .kboard-content{border-bottom:none!important;}
+  .kboard-attr-attach a{color: $grey_02;font-size: 14px;}
+}
+// (default end)
+//공통 end
+
+// ocean-gallery
+// (list)
+#kboard-ocean-gallery-list{
+  .kboard-list{@include grid($columns: repeat(3, 1fr)); gap: 3.125rem 1.25rem;
+    .kboard-gallery-item{padding: 0 !important; width: 100% !important;
+      a{@include flex_column; gap: 0.625rem; text-align: left;
+        .kboard-gallery{
+          &-thumbnail{float: none; @include size(100%, 100%); box-shadow: none; margin: 0;
+            img{@include size(100%, 100%);}
+          }
+          &-title{height: auto; font-size: 1.5625rem; color:#000; -webkit-line-clamp: 1;}
+          &-info{color: $grey_01;}
+          &-foreground{display: none !important;}
+        }
+      }
+    }
+  }
+}
+// (list end)
+// (document)
+
+// (document end)
+// ocean-gallery end
+#kboard-ocean-gallery-document{
+  .kboard-control .left >a:not(:first-child){display: none;}
+}
+// default
+// (list)
+#kboard-default-list{
+    .kboard-list-header, thead{display: none!important;}
+    .kboard-category{padding-bottom: 0!important;
+      .kboard-category-list{background: none!important; border-bottom: 1px solid $grey_04!important;  margin-bottom: 0!important;
+        li{
+          a{font-size: 1.15rem!important; color: $grey_01!important;}
+          &.kboard-category-selected a{color: $main_color_02!important;}
+        }
+      }
+    }
+    .kboard-list{
+      tbody tr{
+        td{background:none; padding: 0 0.6rem; font-size: 1rem; border-bottom: 1px solid $grey_04!important; color: #000; height: 4rem;
+          &.kboard-list{
+            &-uid, &-user, &-vote, &-view{display: none;}
+            &-category1, &-download, &-date{width: 12%; color: $grey_01; font-size: 0.88rem;}
+            &-date{width: 10%;}
+          }
+        }
+      }
+      // ----(자료실)
+      .kboard-list-download .kboard-download{background-color: $main_color_02; border-radius: 0.3rem; padding: 0.625rem;
+        a{@include filter_white; font-weight: 700; display: block;
+          img{width: 0.8rem; margin-right: 0.625rem;}
+        }
+      }
+    }
+}
+// (list end)
+// (document)
+#kboard-default-document{
+  .kboard-attach{border-top:none!important; margin: 0!important;
+    button{background-color: $main_color_02; border-radius: 0.3rem; padding: 0.625rem; color: #fff;}
+  }
+}
+// (document)
+// (editor)
+#kboard-default-editor{
+  input[type=text], select{border-bottom: 1px solid $grey_04!important;}
+  .kboard-attr-attach a{color: $grey_02;font-size: 14px;}
+}
+// (default end)
+
+@include max-tb{
+  // 공통
+    // (document)
+  #kboard-document{
+    .kboard-document-wrap{
+      .kboard-title h1,.kboard-title p{font-size: calc(1.375rem + (1.375 - 1.175) * ((100vw - 20rem) / 1023)); padding: 0.625rem 0.3rem;}
+    }
+    .kboard-detail .detail-attr{padding: 0.625rem 0.3rem!important; line-height: 1.3em!important;
+      .detail-name, .detail-value{font-size: 0.88rem;}
+    }
+  }
+  // (default end)
+  // 공통 end
+
+  // ocean-gallery
+  // (list)
+  #kboard-ocean-gallery-list .kboard-list{@include grid($columns:repeat(2, 1fr));
+    .kboard-gallery-item a .kboard-gallery-title{font-size: calc(1.375rem + (1.375 - 1.175) * ((100vw - 20rem) / 1023));}
+  }
+  // (list end)
+  // ocean-gallery end
+
+  // default
+  // (list)
+  #kboard-default-list .kboard-list{
+    tbody tr td{
+      &.kboard-list{
+        &-category1, &-download{width: 20%;}
+      }
+    }
+  }
+  // (list end)
+  // default end
+}
+@include mb{
+  // 공통
+  // (document)
+  #kboard-document{
+    .kboard-document-wrap{
+      .kboard-detail{display: flex; gap: 0.625rem;}
+    }
+  }
+  // (default end)
+  // (editor)
+#kboard-default-editor, #kboard-ocean-gallery-editor{
+  .kboard-attr-row{flex-direction: column;
+    .attr-name,.attr-value{width: 100%!important; padding: 0!important;}
+  }
+}
+// (default end)
+  // 공통 end
+
+  // default
+  // (list)
+  #kboard-default-list{
+    .kboard-category{
+      &.category-mobile{display: none!important;}
+      &.category-pc{display: block!important;
+        .kboard-category-list li a{font-size: 1rem!important;}
+      }
+    }
+    .kboard-list tbody tr td{
+      &.kboard-list{
+        &-category1, &-download, &-date{display: none;}
+        &-title{padding: 0.625rem 0.3rem;
+          .kboard-default-cut-strings{margin-bottom: 0.625rem;}
+          .kboard-mobile-contents{display: block;
+            .kboard{
+              &-user, &-vote, &-view{display: none;}
+            }
+            // ----(자료실)
+            div.kboard-download{background-color: $main_color_02; border-radius: 0.3rem; padding: 0.3rem 0; width: 6.25rem; text-align: center; margin-top: 0.625rem;
+              a{@include filter_white; font-weight: 700; display: block; font-size: 13px;
+                img{width: 0.8rem; margin-right: 0.3rem;}
+              }
+            }
+          }
+        }
+      }
+    }
+  } 
+  // (list end)
+  // default end
+
+  // ocean-gallery
+  // (list)
+  #kboard-ocean-gallery-list .kboard-list{@include grid($columns:repeat(1, 1fr));}
+  // (list end)
+  // ocean-gallery end
+}

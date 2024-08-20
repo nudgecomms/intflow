@@ -1,0 +1,59 @@
+#main01_more_btn .elementor-button-icon {
+  background-color: var(--e-global-color-5e04356);
+  border-radius: 50%;
+  width: 1.5625rem;
+  height: 1.5625rem;
+  padding: 0.3125rem;
+}
+
+.title_number::after {
+  content: "";
+  position: absolute;
+  left: 55px;
+  bottom: -35px;
+  transform: rotate(-45deg);
+  width: 1px;
+  height: 30px;
+  background-color: #fff;
+}
+
+.main01_section02 .elementor-swiper-button.elementor-swiper-button-prev svg {
+  transform: rotate(-180deg);
+}
+.main01_section02 .swiper-pagination {
+  position: relative;
+  margin-top: 3.125rem;
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.main01_section06 .from .quform-label .quform-label-text {
+  color: #000;
+}
+.main01_section06 .from .quform-option-text {
+  font-size: 1rem !important;
+}
+.main01_section06 .from .quform-option-text .privacy {
+  font-size: 1rem !important;
+  font-weight: 700;
+  color: #333;
+}
+.main01_section06 .from .quform input[type=radio] {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.main01_section06 .from .quform input[type=radio]:checked {
+  accent-color: var(--e-global-color-5e04356);
+}
+.main01_section06 .from .quform-field-text, .main01_section06 .from .quform-field-email {
+  background: none;
+  border-radius: 0;
+  border: 0;
+  border-bottom: 1px solid var(--e-global-color-8a7d752);
+}
+.main01_section06 .from .quform-field-text:focus, .main01_section06 .from .quform-field-email:focus {
+  border-bottom: 1px solid var(--e-global-color-997d2d6);
+}
+.main01_section06 .elementor-icon-list-text .font_logo_color {
+  width: 6.25rem;
+  display: inline-block;
+}/*# sourceMappingURL=240701_style_main_01.css.map */

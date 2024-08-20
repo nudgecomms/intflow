@@ -1,0 +1,105 @@
+@import '../_mixin', '../_variables';
+
+// 비전
+.sub04-1.sub_mainbanner {
+  .elementor-counter-number{
+    background: linear-gradient(90deg, $main_color_01-1 45%, $main_color_01 100%);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+.sub04-1_sec_01{
+  .title.mission .elementor-heading-title > span{@include h4; color: $grey_01; word-break: keep-all;}
+}
+// 비전 end
+//plan
+.sub_04-2_sec_01{
+  .content{
+    .title{background-color: $main_color_02; color: white; padding: 0.3rem 0.625rem; border-radius: 5px; margin-bottom: 0.3rem; display: inline-block; margin-bottom: 0.625rem;}
+    .hyphen_list li:not(:last-child){margin-bottom: 0.625rem;}
+  }
+  .nav .elementor-nav-menu{
+    .menu-item{border-bottom: 1px solid $grey_03;
+      .elementor-item{width: 100%; padding: 1.25rem 0!important; gap: 1.25rem; align-items: center;
+        .number{font:{size: 1rem; family: "Pretendard"; weight: 400;} line-height: 1; color: $grey_01; transition: 0.3s;}
+      }
+      &:hover{
+        .elementor-item, .number{color: $main_color_02!important;}
+      }
+    }
+  }
+}
+//plan end
+// 커리어
+.sub_04-3_sec_02{
+  .swiper-slide{box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.08);
+    &::after{content: url(/wp-content/uploads/2024/08/sub_04-3_sec_02_icon.svg); @include size(30px,30px); position: absolute; left: 1.25rem; top:  1.25rem;}
+  }
+    .elementor-testimonial__text{margin-top: 3rem ;}
+}
+// 커리어 end
+//최근활동
+.sub_04-4_sec_01{
+  .year.elementor-sticky--effects,.gradient_text{
+    & + .elementor-sticky__spacer + .history{
+      .elementor-icon-list-text{color: $black !important;
+        .day{color: $grey_01 !important;}
+      }
+    }
+  }
+  .history_wrapper{
+    .history{
+      .elementor-icon-list-text{@include flex_gap(1.25rem);
+        .day{display: inline-block !important; min-width: 2rem; text-align: center;
+          &.opacity{opacity: 0;}
+        }
+      }
+    }
+    &:first-child .day{color: $grey_01!important;}
+  }
+}
+//최근활동 end
+@include pc{
+  //최근활동
+  .sub_04-4_sec_01{
+    .year.elementor-sticky--effects,.gradient_text{
+      .elementor-heading-title{background: linear-gradient(90deg, $main_color_01-1 45%, $main_color_01 100%); -webkit-text-fill-color: transparent; background-clip: text;}
+    }
+  }
+  //최근활동 end
+}
+@include max-tb{
+  //최근활동
+  .sub_04-4_sec_01{
+    .year .elementor-heading-title{color: $main_color_02 !important;}
+    .history_wrapper .history{
+      .elementor-icon-list-text{color: $black !important;}
+      .day{color: $black !important;}
+    }
+  }
+  //최근활동 end
+  // 플랜
+  .sub_04-2_sec_01 .nav{
+    .elementor-nav-menu{display: flex; width: 100%; justify-content: space-between;
+      .menu-item{border: none; background-color: #fff; border-radius: 0.625rem; padding: 0.3rem 0.75rem;
+        .elementor-item{padding: 0!important; gap: 0.625rem;}
+      }
+    }
+    &_en .elementor-nav-menu{@include touch_snap; gap: 1rem;}
+  }
+  // 플랜 end
+}
+@include mb{
+  // 플랜
+  .sub_04-2_sec_01 .nav{
+    .elementor-nav-menu{@include touch_snap; gap: 0.625rem;}
+  }
+   // 플랜 end
+  // 커리어
+  .sub_04-3_sec_02{
+    .swiper-slide{
+      &::after{ @include size(20px,20px);}
+    }
+  }
+  // 커리어 end
+}

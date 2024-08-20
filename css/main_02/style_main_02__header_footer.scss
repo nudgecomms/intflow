@@ -1,0 +1,101 @@
+@import '../_mixin', '../_variables';
+
+#main02_btn, #footer_btn{
+  .elementor-button-content-wrapper{align-items: center;
+    .elementor-button-icon{display: flex; background-color: $main_color_01-1; border-radius: 50px; padding: 0.625rem;
+      svg{transform: rotate(90deg); @include filter_white;}
+    }
+  }
+}
+.elementor-widget-button{overflow: hidden;}
+#main02_btn{
+  .elementor-button-icon{overflow: hidden;
+    svg{
+      &:first-child{position: absolute; left: -1.25rem;}
+      &:nth-child(2){position: relative;}
+    }
+  }
+  &:hover{
+    .elementor-button-icon{
+      svg{
+        &:first-child{animation: btn_01 .5s forwards;}
+        &:nth-child(2){position:absolute; animation: btn_02 .5s forwards;}
+      }
+    }
+  }
+}
+@keyframes btn_01 {
+  0%{position: absolute; left: -1.25rem;}
+  100%{position: relative; left: 0;}
+}
+@keyframes btn_02 {
+  0%{position: relative; opacity: 1;}
+  100%{position: absolute; opacity: 0;}
+}
+#contact_btn{background: linear-gradient(268deg, $main_color_01 0%, $main_color_01-1 100%);}
+#footer_btn{
+  .elementor-button-content-wrapper{
+    .elementor-button-icon{
+      svg{transform: rotate(45deg); transition: .3s;}
+    }
+  }
+  &:hover svg{transform: rotate(90deg) !important;}
+}
+
+.main02_header{
+  .e-n-menu{
+    &-heading{
+      button{display: none !important;}
+    }
+    &-content{
+      .about > .e-con-inner{padding-top: 0.625rem;}
+      .lnb:hover{
+        .cls-1{fill: #fff;}
+        .elementor-icon-box-title span, .elementor-icon-box-description{color: #fff !important;}
+      }
+    }
+  }
+  .hamburger_btn{
+    .elementor-icon{
+      &[aria-expanded="false"]{
+        svg g path{transition: .3s; transform: rotate(0);}
+      }
+      &[aria-expanded="true"]{
+        svg g path{transition: .3s;
+          &:first-child{transform: rotate(45deg) translate(-3px, -19px);}
+          &:last-child{transform: rotate(-45deg) translate(-19px, 9px);}
+        }
+      }
+    }
+  }
+  .mb_nav{
+    .e-n-accordion-item-title{justify-content: space-between;
+      .e-opened{transform: rotate(-90deg);}
+      .e-closed{transform: rotate(90deg);}
+    }
+  }
+}
+.page-id-2022 .main02_header{
+  &:not(.elementor-sticky--effects, &:hover){background-color: transparent !important; position: absolute;
+    .logo{@include filter_white;}
+    .hamburger_btn path{fill:#fff !important;}
+    .e-n-menu-title-text{color: #fff !important;}
+  }
+}
+.main02_footer{
+  #contact_btn{
+    &.fixed{animation: fixed .3s forwards;}
+  }
+  .info{height: 100%;}
+}
+@keyframes fixed {
+  0%{opacity: 1; z-index: 999;}
+  100%{opacity: 0; z-index: -999;}
+}
+@include mb{
+  .main02_footer{
+    .info .info_text .elementor-icon-list-items{@include flex_column; gap: 0.5rem;
+      .elementor-icon-list-item:after{display: none;}
+    }
+  }
+}

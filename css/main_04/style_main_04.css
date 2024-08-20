@@ -1,0 +1,129 @@
+@charset "UTF-8";
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--e-global-color-997d2d6);
+  border-radius: 10px;
+}
+
+#main04_btn .elementor-button-icon {
+  transition: 0.3s;
+}
+#main04_btn .elementor-button-icon svg {
+  transform: rotate(90deg);
+  transition: 0.3s;
+}
+#main04_btn:hover .elementor-button-icon {
+  margin-left: 0.625rem;
+}
+
+.main04_cont_02 .elementor-image-box-img img {
+  border-radius: 1.25rem 1.25rem 0 0 !important;
+}
+.main04_cont_02 .elementor-image-box-content {
+  padding: 2rem 1.25rem;
+}
+.main04_cont_02 .elementor-image-box-content .elementor-image-box-title {
+  min-height: 4rem;
+}
+
+.main04_middlebanner > .e-con-inner {
+  background-color: var(--e-global-color-56f6c88);
+  padding: 3.75rem !important;
+  border-radius: 1.25rem;
+}
+
+.main04_cont_04 .sns .elementor-social-icons-wrapper .elementor-grid-item:nth-child(2) > a {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+.main04_cont_04 .contact_form {
+  /* (error & success message) */
+  /* (error & success message end) */
+}
+.main04_cont_04 .contact_form .quform-label, .main04_cont_04 .contact_form .quform-option-text, .main04_cont_04 .contact_form .quform-button-text {
+  font-family: "Spoqa Han Sans Neo", Sans-serif;
+}
+.main04_cont_04 .contact_form .quform-error-inner {
+  background: none !important;
+  border: none !important;
+  padding: 0 0 0 10px !important;
+  font-size: 14px;
+}
+.main04_cont_04 .contact_form .quform-error-inner .quform-error-text {
+  color: var(--e-global-color-5e04356);
+}
+.main04_cont_04 .contact_form .quform-success-message {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--e-global-color-5e04356);
+}
+.main04_cont_04 .contact_form .quform-success-message .quform-success-message-icon {
+  left: 0;
+}
+.main04_cont_04 .contact_form .quform-label {
+  font-size: 1rem;
+}
+.main04_cont_04 .contact_form input {
+  font-size: 1rem;
+}
+.main04_cont_04 .contact_form .privacy {
+  font-size: 1rem;
+  color: #000;
+  text-decoration: underline;
+}
+.main04_cont_04 .contact_form .privacy_wrapper {
+  /* 버튼 */
+  /* 버튼 end */
+}
+.main04_cont_04 .contact_form .privacy_wrapper .quform-option {
+  display: flex !important;
+  gap: 0.625rem;
+  align-items: center;
+}
+.main04_cont_04 .contact_form .privacy_wrapper input[type=checkbox], .main04_cont_04 .contact_form .privacy_wrapper input[type=checkbox]:checked:after {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50% !important;
+}
+.main04_cont_04 .contact_form .privacy_wrapper input[type=checkbox] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid var(--e-global-color-997d2d6);
+}
+.main04_cont_04 .contact_form .privacy_wrapper input[type=checkbox]:checked:after {
+  content: "✔";
+  position: absolute;
+  background-color: var(--e-global-color-997d2d6);
+  left: 0px;
+  top: 0px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.3em;
+}
+.main04_cont_04 .contact_form .privacy_wrapper .quform-option-label {
+  padding: 0 !important;
+  line-height: 1.3em;
+  font-size: 16px;
+}
+
+@media (max-width: 767px) {
+  .main04_middlebanner > .e-con-inner {
+    padding: 2.5rem 1.25rem !important;
+  }
+}/*# sourceMappingURL=style_main_04.css.map */

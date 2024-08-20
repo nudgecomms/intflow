@@ -1,0 +1,15 @@
+@import '../_mixin', '../_variables';
+
+.info{
+  table{border: none !important; margin: 0; box-shadow: none !important; background-color: transparent !important; border-radius: $radius;
+    tbody{@include flex;
+      tr{background-color: transparent; @include flex;
+        td {padding: 0 !important; border: none !important;
+          a{font:{family: var(--e-global-typography-primary-font-family) !important; weight:700}; color: $main_color_02 !important; @include h4; pointer-events: none;}
+        }
+        &:hover td{background-color: transparent;}
+        &:not(&:nth-child(6)){display: none;}
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+@import '../_mixin', '../_variables';
+
+// more_btn
+#main01_more_btn{
+    .elementor-button-icon{background-color: $main_color_01; border-radius: 50%; width: 1.5625rem; height: 1.5625rem; padding: 0.3125rem;}
+}
+
+// title_numbe
+.title_number{
+    &::after{content: ''; position: absolute; left: 55px; bottom: -35px; transform: rotate(-45deg);width: 1px; height: 30px; background-color: #fff;}
+}
+
+// section02
+.main01_section02{
+    .elementor-swiper-button{
+        &.elementor-swiper-button-prev svg{transform: rotate(-180deg);}
+    } 
+    .swiper-pagination{position: relative; margin-top: 3.125rem; background-color: rgba(255, 255, 255, .25);}
+}
+
+// section06
+.main01_section06{
+    .from{
+        .quform-label .quform-label-text{color: #000;}
+        .quform-option-text{font-size: 1rem!important;
+            .privacy{font-size: 1rem!important; font-weight: 700; color: #333;}
+        }
+        .quform input[type=radio]{@include size(1.25rem,1.25rem);
+            &:checked{accent-color: $main_color_01;} 
+        }
+        .quform-field-text,.quform-field-email{ background: none; border-radius: 0; border: 0; border-bottom: 1px solid $grey_03;
+            &:focus{border-bottom: 1px solid $grey_02;}
+        }
+    }
+    .elementor-icon-list-text .font_logo_color{width: 6.25rem; display: inline-block;}
+}
+

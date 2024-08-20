@@ -1,0 +1,6 @@
+@import '../_mixin', '../_variables';
+
+.e-n-accordion-item-title-icon{
+  .e-opened{transform: rotate(-90deg);}
+  .e-closed{transform: rotate(90deg);}
+}
